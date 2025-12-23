@@ -14,13 +14,57 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        .tech-content {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .tech-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .tech-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .tech-details.active {
+            max-height: 500px;
+            margin-top: 1rem;
+        }
+        
+        /* Styling for technology logos */
+        .tech-logo {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+        
+        .tech-name {
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
+    <!-- Navbar and Home sections remain the same -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <span class="text-xl font-bold gradient-text tracking-tighter">DEV.NAME</span>
+            <span class="text-xl font-bold gradient-text tracking-tighter">Portofolio</span>
             <div class="hidden md:flex space-x-8 font-medium">
                 <a href="#home" class="hover:text-blue-600 transition">Home</a>
                 <a href="#about" class="hover:text-blue-600 transition">About</a>
@@ -34,112 +78,625 @@
     <section id="home" class="pt-32 pb-20 px-4">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1 text-center md:text-left">
-                <h2 class="text-blue-600 font-semibold mb-2">Hello, I'm [Nama Kamu]</h2>
+                <h2 class="text-blue-600 font-semibold mb-2">Hello, Saya Argi Van Maulana</h2>
                 <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    Building <span class="gradient-text">Scalable</span> Fullstack Solutions.
+                    Fullstack <span class="gradient-text">Developer</span> Solutions.
                 </h1>
                 <p class="text-slate-600 text-lg mb-8 max-w-xl">
                     Saya seorang pengembang web yang fokus pada pembuatan aplikasi modern dengan performa tinggi, mulai dari desain UI/UX hingga arsitektur database.
                 </p>
                 <div class="flex justify-center md:justify-start gap-4">
                     <a href="#projects" class="px-6 py-3 bg-slate-900 text-white rounded-xl hover:bg-slate-800 transition shadow-lg">View My Works</a>
-                    <a href="#" class="px-6 py-3 border border-slate-300 rounded-xl hover:bg-white transition">Download CV</a>
+                     <a href="CV Saya.jpeg" download="CV saya.jpeg" class="px-6 py-3 border border-slate-300 rounded-xl hover:bg-white transition">
+        Download CV
+    </a>
                 </div>
             </div>
             <div class="flex-1 relative">
                 <div class="w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full p-2 shadow-2xl">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" class="w-full h-full rounded-full bg-white object-cover">
+                    <img src="pantai.jpeg" alt="Profile" class="w-full h-full rounded-full bg-white object-cover">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- UPDATED TECHNICAL STACK SECTION -->
     <section id="skills" class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Technical Stack</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="p-6 border border-slate-100 rounded-2xl bg-slate-50 hover:shadow-md transition">
-                    <i class="fab fa-react text-blue-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold">Frontend</h3>
-                    <p class="text-sm text-slate-500">React, Next.js, Tailwind CSS</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Programming Languages -->
+                <div class="tech-content p-6 border border-slate-100 rounded-2xl bg-slate-50" onclick="toggleDetails('languages-details')">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-code text-blue-600 text-3xl mb-4"></i>
+                        <h3 class="font-bold text-lg">Languages</h3>
+                        <p class="text-sm text-slate-500">Klik untuk detail</p>
+                    </div>
+                    
+                    <div id="languages-details" class="tech-details">
+                        <div class="grid grid-cols-3 gap-3">
+                            <!-- HTML5 -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #E34F26;">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <p class="tech-name">HTML5</p>
+                            </div>
+                            <!-- CSS3 -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #1572B6;">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <p class="tech-name">CSS3</p>
+                            </div>
+                            <!-- JavaScript -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #F7DF1E;">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <p class="tech-name">JavaScript</p>
+                            </div>
+                            <!-- PHP -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #777BB4;">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <p class="tech-name">PHP</p>
+                            </div>
+                            <!-- Python -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #3776AB;">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <p class="tech-name">Python</p>
+                            </div>
+                            <!-- C++ -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #00599C;">
+                                    <i class="fas fa-c"></i>
+                                </div>
+                                <p class="tech-name">C++</p>
+                            </div>
+                            <!-- C -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #A8B9CC;">
+                                    <i class="fas fa-c"></i>
+                                </div>
+                                <p class="tech-name">C</p>
+                            </div>
+                            <!-- Go -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #00ADD8;">
+                                    <i class="fab fa-golang"></i>
+                                </div>
+                                <p class="tech-name">Go</p>
+                            </div>
+                            <!-- Bash -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #4EAA25;">
+                                    <i class="fas fa-terminal"></i>
+                                </div>
+                                <p class="tech-name">Bash</p>
+                            </div>
+                            <!-- SQL -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #4479A1;">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <p class="tech-name">SQL</p>
+                            </div>
+                            <!-- TypeScript -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #3178C6;">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <p class="tech-name">TypeScript</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-6 border border-slate-100 rounded-2xl bg-slate-50 hover:shadow-md transition">
-                    <i class="fab fa-node-js text-green-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold">Backend</h3>
-                    <p class="text-sm text-slate-500">Node.js, Express, Go</p>
+
+                <!-- Frameworks & Libraries -->
+                <div class="tech-content p-6 border border-slate-100 rounded-2xl bg-slate-50" onclick="toggleDetails('frameworks-details')">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-cogs text-purple-600 text-3xl mb-4"></i>
+                        <h3 class="font-bold text-lg">Frameworks & Libraries</h3>
+                        <p class="text-sm text-slate-500">Klik untuk detail</p>
+                    </div>
+                    
+                    <div id="frameworks-details" class="tech-details">
+                        <div class="grid grid-cols-3 gap-3">
+                            <!-- React -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #61DAFB;">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <p class="tech-name">React</p>
+                            </div>
+                            <!-- Laravel -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #FF2D20;">
+                                    <i class="fab fa-laravel"></i>
+                                </div>
+                                <p class="tech-name">Laravel</p>
+                            </div>
+                            <!-- Node.js -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #339933;">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <p class="tech-name">Node.js</p>
+                            </div>
+                            <!-- Bootstrap -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #7952B3;">
+                                    <i class="fab fa-bootstrap"></i>
+                                </div>
+                                <p class="tech-name">Bootstrap</p>
+                            </div>
+                            <!-- Tailwind -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #38B2AC;">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <p class="tech-name">Tailwind</p>
+                            </div>
+                            <!-- Django -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #092E20;">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <p class="tech-name">Django</p>
+                            </div>
+                            <!-- Express -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #000000;">
+                                    EX
+                                </div>
+                                <p class="tech-name">Express</p>
+                            </div>
+                            <!-- Next.js -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #000000;">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                                <p class="tech-name">Next.js</p>
+                            </div>
+                            <!-- Nuxt -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #00DC82;">
+                                    NU
+                                </div>
+                                <p class="tech-name">Nuxt</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-6 border border-slate-100 rounded-2xl bg-slate-50 hover:shadow-md transition">
-                    <i class="fas fa-database text-orange-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold">Database</h3>
-                    <p class="text-sm text-slate-500">PostgreSQL, MongoDB, Redis</p>
-                </div>
-                <div class="p-6 border border-slate-100 rounded-2xl bg-slate-50 hover:shadow-md transition">
-                    <i class="fab fa-docker text-blue-400 text-3xl mb-4"></i>
-                    <h3 class="font-bold">DevOps</h3>
-                    <p class="text-sm text-slate-500">Docker, AWS, CI/CD</p>
+
+                <!-- Tools & Platforms -->
+                <div class="tech-content p-6 border border-slate-100 rounded-2xl bg-slate-50" onclick="toggleDetails('tools-details')">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-tools text-green-600 text-3xl mb-4"></i>
+                        <h3 class="font-bold text-lg">Tools & Platforms</h3>
+                        <p class="text-sm text-slate-500">Klik untuk detail</p>
+                    </div>
+                    
+                    <div id="tools-details" class="tech-details">
+                        <div class="grid grid-cols-3 gap-3">
+                            <!-- Git -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #F05032;">
+                                    <i class="fab fa-git-alt"></i>
+                                </div>
+                                <p class="tech-name">Git</p>
+                            </div>
+                            <!-- Docker -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #2496ED;">
+                                    <i class="fab fa-docker"></i>
+                                </div>
+                                <p class="tech-name">Docker</p>
+                            </div>
+                            <!-- AWS -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #FF9900;">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <p class="tech-name">AWS</p>
+                            </div>
+                            <!-- Postman -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #FF6C37;">
+                                    PM
+                                </div>
+                                <p class="tech-name">Postman</p>
+                            </div>
+                            <!-- MySQL -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #4479A1;">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <p class="tech-name">MySQL</p>
+                            </div>
+                            <!-- MongoDB -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #47A248;">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <p class="tech-name">MongoDB</p>
+                            </div>
+                            <!-- Linux -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #FCC624;">
+                                    <i class="fab fa-linux"></i>
+                                </div>
+                                <p class="tech-name">Linux</p>
+                            </div>
+                            <!-- GitHub -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #181717;">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <p class="tech-name">GitHub</p>
+                            </div>
+                            <!-- VSCode -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #007ACC;">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <p class="tech-name">VSCode</p>
+                            </div>
+                            <!-- Postgres -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #4169E1;">
+                                    PG
+                                </div>
+                                <p class="tech-name">Postgres</p>
+                            </div>
+                            <!-- Redis -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #DC382D;">
+                                    RD
+                                </div>
+                                <p class="tech-name">Redis</p>
+                            </div>
+                            <!-- Vercel -->
+                            <div class="tech-item">
+                                <div class="tech-logo" style="color: #000000;">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <p class="tech-name">Vercel</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold mb-2">Featured Projects</h2>
-                    <p class="text-slate-600">Beberapa karya terbaik yang saya bangun.</p>
-                </div>
+    <!-- Rest of the HTML remains the same -->
+        
+       <section id="projects" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <h2 class="text-3xl font-bold mb-2">Featured Projects</h2>
+                <p class="text-slate-600">Beberapa karya terbaik yang saya bangun.</p>
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition duration-300">
-                    <div class="h-64 bg-slate-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <a href="#" class="text-blue-600 font-semibold hover:underline hidden md:block">
+                View All Projects <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- Horizontal Scroll Container -->
+        <div class="relative">
+            <!-- Scroll Container -->
+            <div id="projects-scroll" class="flex overflow-x-auto pb-8 pt-4 scrollbar-hide gap-6 snap-x snap-mandatory">
+                <!-- Project 1 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition duration-300 min-w-[300px] md:min-w-[350px] flex-shrink-0 snap-start">
+                    <div class="h-48 bg-slate-200 overflow-hidden">
+                        <img src="https://www.mobicommerce.net/wp-content/uploads/2017/12/marketplace.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
-                    <div class="p-8">
+                    <div class="p-6">
                         <div class="flex gap-2 mb-4">
                             <span class="text-xs font-bold px-3 py-1 bg-blue-100 text-blue-600 rounded-full">E-Commerce</span>
                             <span class="text-xs font-bold px-3 py-1 bg-purple-100 text-purple-600 rounded-full">Fullstack</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Modern Marketplace API</h3>
                         <p class="text-slate-600 mb-6 text-sm">Sistem marketplace kompleks dengan integrasi pembayaran Gateway dan real-time inventory.</p>
-                        <a href="#" class="text-blue-600 font-semibold hover:underline">View Project <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-blue-600 font-semibold hover:underline text-sm">View Project <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                            <div class="flex gap-2">
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">React</span>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Node.js</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition duration-300">
-                    <div class="h-64 bg-slate-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <!-- Project 2 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition duration-300 min-w-[300px] md:min-w-[350px] flex-shrink-0 snap-start">
+                    <div class="h-48 bg-slate-200 overflow-hidden">
+                        <img src="https://cdn.prod.website-files.com/66a6386b15171cfef894008e/66d6e107a9786f5f00eddf72_blog-5-in-image-1-copy.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
-                    <div class="p-8">
+                    <div class="p-6">
                         <div class="flex gap-2 mb-4">
                             <span class="text-xs font-bold px-3 py-1 bg-green-100 text-green-600 rounded-full">Dashboard</span>
                             <span class="text-xs font-bold px-3 py-1 bg-orange-100 text-orange-600 rounded-full">SAAS</span>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Analytics SaaS Platform</h3>
                         <p class="text-slate-600 mb-6 text-sm">Dashboard monitoring data real-time menggunakan WebSocket dan visualisasi D3.js.</p>
-                        <a href="#" class="text-blue-600 font-semibold hover:underline">View Project <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-blue-600 font-semibold hover:underline text-sm">View Project <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                            <div class="flex gap-2">
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Vue.js</span>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Express</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition duration-300 min-w-[300px] md:min-w-[350px] flex-shrink-0 snap-start">
+                    <div class="h-48 bg-slate-200 overflow-hidden">
+                        <img src="https://www.designnominees.com/application/upload/Blog/2020/06/how-to-develop-a-successful-anonymous-social-networking-app-183.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs font-bold px-3 py-1 bg-red-100 text-red-600 rounded-full">Social Media</span>
+                            <span class="text-xs font-bold px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full">Real-time</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Social Networking App</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Aplikasi sosial media dengan fitur chat real-time, upload media, dan algoritma rekomendasi.</p>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-blue-600 font-semibold hover:underline text-sm">View Project <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                            <div class="flex gap-2">
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Next.js</span>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition duration-300 min-w-[300px] md:min-w-[350px] flex-shrink-0 snap-start">
+                    <div class="h-48 bg-slate-200 overflow-hidden">
+                        <img src="https://www.supinder.in/wp-content/uploads/2019/03/open-edx-img.jpg">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs font-bold px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full">Learning</span>
+                            <span class="text-xs font-bold px-3 py-1 bg-pink-100 text-pink-600 rounded-full">LMS</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">E-Learning Platform</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Platform pembelajaran online dengan sistem kursus, kuis interaktif, dan progress tracking.</p>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-blue-600 font-semibold hover:underline text-sm">View Project <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                            <div class="flex gap-2">
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Laravel</span>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition duration-300 min-w-[300px] md:min-w-[350px] flex-shrink-0 snap-start">
+                    <div class="h-48 bg-slate-200 overflow-hidden">
+                        <img src="https://c8.alamy.com/comp/2PX40KF/online-travel-ticket-store-through-transportation-and-journey-provider-app-for-booking-in-flat-cartoon-hand-drawn-template-illustration-2PX40KF.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs font-bold px-3 py-1 bg-teal-100 text-teal-600 rounded-full">Travel</span>
+                            <span class="text-xs font-bold px-3 py-1 bg-amber-100 text-amber-600 rounded-full">Booking</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Travel Booking System</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Sistem pemesanan perjalanan lengkap dengan booking hotel, tiket pesawat, dan itinerary planner.</p>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-blue-600 font-semibold hover:underline text-sm">View Project <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                            <div class="flex gap-2">
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">React</span>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition duration-300 min-w-[300px] md:min-w-[350px] flex-shrink-0 snap-start">
+                    <div class="h-48 bg-slate-200 overflow-hidden">
+                        <img src="https://tse1.mm.bing.net/th/id/OIP.pxac8m3MuAELyp0yKYtgKQHaE7?cb=ucfimg2&ucfimg=1&w=1200&h=799&rs=1&pid=ImgDetMain&o=7&rm=3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs font-bold px-3 py-1 bg-blue-100 text-blue-600 rounded-full">Finance</span>
+                            <span class="text-xs font-bold px-3 py-1 bg-emerald-100 text-emerald-600 rounded-full">FinTech</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Personal Finance Tracker</h3>
+                        <p class="text-slate-600 mb-6 text-sm">Aplikasi manajemen keuangan pribadi dengan analisis pengeluaran dan financial goal setting.</p>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="text-blue-600 font-semibold hover:underline text-sm">View Project <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                            <div class="flex gap-2">
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Angular</span>
+                                <span class="text-xs bg-slate-100 px-2 py-1 rounded">Django</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Scroll Buttons -->
+            <button id="scroll-left" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition hidden md:block">
+                <i class="fas fa-chevron-left text-slate-700"></i>
+            </button>
+            <button id="scroll-right" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition hidden md:block">
+                <i class="fas fa-chevron-right text-slate-700"></i>
+            </button>
         </div>
-    </section>
+
+        <!-- Dots Indicator -->
+        <div class="flex justify-center gap-2 mt-6">
+            <div class="w-2 h-2 bg-blue-600 rounded-full dot active"></div>
+            <div class="w-2 h-2 bg-slate-300 rounded-full dot"></div>
+            <div class="w-2 h-2 bg-slate-300 rounded-full dot"></div>
+            <div class="w-2 h-2 bg-slate-300 rounded-full dot"></div>
+            <div class="w-2 h-2 bg-slate-300 rounded-full dot"></div>
+            <div class="w-2 h-2 bg-slate-300 rounded-full dot"></div>
+        </div>
+
+        <!-- View All Button untuk Mobile -->
+        <div class="mt-12 text-center md:hidden">
+            <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition inline-flex items-center">
+                View All Projects <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Hide scrollbar */
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Snap scrolling */
+    .snap-x {
+        scroll-snap-type: x mandatory;
+    }
+    
+    .snap-start {
+        scroll-snap-align: start;
+    }
+    
+    /* Smooth scrolling */
+    #projects-scroll {
+        scroll-behavior: smooth;
+    }
+    
+    /* Custom scroll buttons */
+    #scroll-left, #scroll-right {
+        z-index: 10;
+    }
+    
+    /* Dot indicator styles */
+    .dot {
+        transition: all 0.3s ease;
+    }
+    
+    .dot.active {
+        width: 24px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollContainer = document.getElementById('projects-scroll');
+        const scrollLeftBtn = document.getElementById('scroll-left');
+        const scrollRightBtn = document.getElementById('scroll-right');
+        const dots = document.querySelectorAll('.dot');
+        
+        // Scroll buttons functionality
+        scrollLeftBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -350, behavior: 'smooth' });
+        });
+        
+        scrollRightBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: 350, behavior: 'smooth' });
+        });
+        
+        // Update dots on scroll
+        scrollContainer.addEventListener('scroll', updateDots);
+        
+        function updateDots() {
+            const scrollWidth = scrollContainer.scrollWidth;
+            const clientWidth = scrollContainer.clientWidth;
+            const scrollLeft = scrollContainer.scrollLeft;
+            const projectWidth = 350; // Approximate width of each project card
+            
+            // Calculate which project is mostly visible
+            const activeIndex = Math.round(scrollLeft / projectWidth);
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+                dot.classList.toggle('bg-slate-300', index !== activeIndex);
+            });
+            
+            // Show/hide scroll buttons
+            scrollLeftBtn.style.display = scrollLeft <= 10 ? 'none' : 'block';
+            scrollRightBtn.style.display = scrollLeft >= (scrollWidth - clientWidth - 10) ? 'none' : 'block';
+        }
+        
+        // Initialize dots
+        updateDots();
+        
+        // Auto-hide scroll buttons on mobile
+        window.addEventListener('resize', updateDots);
+        
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let scrollLeftStart = 0;
+        
+        scrollContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            scrollLeftStart = scrollContainer.scrollLeft;
+        });
+        
+        scrollContainer.addEventListener('touchmove', (e) => {
+            if (!e.cancelable) return;
+            e.preventDefault();
+            const x = e.touches[0].clientX;
+            const walk = (x - startX) * 2;
+            scrollContainer.scrollLeft = scrollLeftStart - walk;
+        });
+    });
+</script>
+        <!-- View All Button untuk Mobile -->
+        <div class="mt-12 text-center md:hidden">
+            <a href="#" class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition inline-flex items-center">
+                View All Projects <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
     <footer id="contact" class="bg-slate-900 text-white py-20 px-4">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-4xl font-bold mb-6">Let's Work Together</h2>
             <p class="text-slate-400 mb-10 text-lg">Sedang mencari pengembang untuk membangun ide kamu? Mari berdiskusi!</p>
             <div class="flex justify-center gap-6 mb-12">
-                <a href="#" class="text-3xl hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/Giivan" class="text-3xl hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
                 <a href="#" class="text-3xl hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-3xl hover:text-blue-400 transition"><i class="fas fa-envelope"></i></a>
+                <a href="https://mail.google.com/mail/u/0/?hl=en#inbox" class="text-3xl hover:text-blue-400 transition"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/aarrgii_/" class="text-3xl hover:text-blue-400 transition" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/argi.maulana.52" class="text-3xl hover:text-blue-400 transition" title="Facebook"><i class="fab fa-facebook"></i>
             </div>
-            <p class="text-slate-500 text-sm">© 2024 YourName. All rights reserved.</p>
+            <p class="text-slate-500 text-sm">© 2024 Bahatfaabdillah. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scroll listener bisa ditambahkan di sini jika perlu logika khusus
+        // Toggle function untuk menampilkan/sembunyikan detail
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('active');
+            
+            // Close other open details
+            const allDetails = document.querySelectorAll('.tech-details');
+            allDetails.forEach(detail => {
+                if (detail.id !== id && detail.classList.contains('active')) {
+                    detail.classList.remove('active');
+                }
+            });
+        }
+        
+        // Smooth scroll listener
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
@@ -147,6 +704,14 @@
             } else {
                 nav.classList.remove('shadow-lg');
             }
+        });
+        
+        // Initialize first card as open
+        document.addEventListener('DOMContentLoaded', function() {
+            // Open first card by default
+            setTimeout(() => {
+                document.getElementById('languages-details').classList.add('active');
+            }, 500);
         });
     </script>
 </body>
